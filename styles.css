@@ -242,3 +242,50 @@ input:checked:nth-child(4) ~ .controls .controls__labels label:nth-child(4):acti
 input:checked:nth-child(5) ~ .controls .controls__labels label:nth-child(5):active span {
 	background-color: white;
 }
+
+* Добавляю изменение стилей при уменьшении окна просмотра */ @media screen and (max-width: 1100px) {
+	html,
+	body {
+		height: 57vw;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	html,
+	body {
+		height: 74vw;
+	}
+	.slider {
+		height: 75%;
+	}
+}
+
+@media screen and (max-width: 769px) {
+	html,
+	body {
+		height: 100%;
+	}
+	.slider {
+		height: 50vw;
+	}
+	.controls {
+		flex-direction: column-reverse;
+		align-items: center;
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	.text__slider {
+		width: 100%;
+	}
+	.text__item p {
+		font-size: 1.125rem;
+	}
+}
+
+@media screen and (max-width: 620px) {
+	html,
+	body {
+		height: 130vw;
+	}
+}
