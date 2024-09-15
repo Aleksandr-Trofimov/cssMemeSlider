@@ -1,0 +1,244 @@
+/* Общие стили */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+img {
+	display: block;
+}
+
+html,
+body {
+	background-color: #25282a;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+/* Определяем размеры контейнера контента */
+
+.container {
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+/* Стили для части с изображениями */
+
+.slider {
+	height: 80%;
+	margin: 0 auto;
+	margin-top: 1.5rem;
+	overflow: hidden;
+	border-radius: 1.25rem;
+	-webkit-border-radius: 1.25rem;
+	-moz-border-radius: 1.25rem;
+	-ms-border-radius: 1.25rem;
+	-o-border-radius: 1.25rem;
+}
+
+.slider__images {
+	width: 500%;
+	height: 100%;
+	display: flex;
+}
+
+.slider__images .slider__item {
+	width: 20%;
+	transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+}
+
+.slider__item img {
+	width: 100%;
+	height: 100%;
+}
+
+/* Задаем стили для смены картинок */
+
+input:checked:nth-child(1) ~ .slider .slider__images .viewed-image {
+	margin-left: 0;
+}
+input:checked:nth-child(2) ~ .slider .slider__images .viewed-image {
+	margin-left: -20%;
+}
+input:checked:nth-child(3) ~ .slider .slider__images .viewed-image {
+	margin-left: -40%;
+}
+input:checked:nth-child(4) ~ .slider .slider__images .viewed-image {
+	margin-left: -60%;
+}
+input:checked:nth-child(5) ~ .slider .slider__images .viewed-image {
+	margin-left: -80%;
+}
+
+/* Скрываем стандартные инпуты */
+
+.container input {
+	display: none;
+}
+
+/* Стилизуем нижний блок */
+
+.controls {
+	width: 100%;
+	margin-top: 3rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/* Стилизуем текст */
+
+.text__slider {
+	width: 20rem;
+	overflow: hidden;
+}
+
+.controls__text {
+	width: 500%;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+}
+
+.text__item {
+	width: 20%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	overflow: hidden;
+}
+
+.text__item p {
+	color: #fff;
+	font-size: 1.25rem;
+}
+
+/* Слайдер текста */
+
+.viewed-text {
+	transition: margin-left 0.5s ease;
+	-webkit-transition: margin-left 0.5s ease;
+	-moz-transition: margin-left 0.5s ease;
+	-ms-transition: margin-left 0.5s ease;
+	-o-transition: margin-left 0.5s ease;
+}
+
+input:checked:nth-child(1) ~ .controls .text__slider .controls__text .viewed-text {
+	margin-left: 0;
+}
+input:checked:nth-child(2) ~ .controls .text__slider .controls__text .viewed-text {
+	margin-left: -20%;
+}
+input:checked:nth-child(3) ~ .controls .text__slider .controls__text .viewed-text {
+	margin-left: -40%;
+}
+input:checked:nth-child(4) ~ .controls .text__slider .controls__text .viewed-text {
+	margin-left: -60%;
+}
+input:checked:nth-child(5) ~ .controls .text__slider .controls__text .viewed-text {
+	margin-left: -80%;
+}
+
+/* Задаем условия отображения при выборе определенной радиокнопки */
+
+/* Стилизуем кнопки */
+
+.controls__labels {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	justify-content: center;
+}
+
+.controls__labels label {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	background-color: transparent;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	cursor: pointer;
+	outline: none;
+	box-shadow: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+/* Убираем подсветку на label при нажатии */
+
+.controls__labels label:focus,
+.controls__labels label:hover,
+.controls__labels label:active {
+	outline: 0;
+	outline-offset: 0;
+	box-shadow: none;
+}
+
+label span {
+	display: block;
+	width: 1.125rem;
+	height: 1.125rem;
+	background-color: #71abfe;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border: 0.125rem solid #415878;
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+}
+
+/* Добавляем эффекты на кнопки */
+
+/* Стили, когда кнопка выбрана */
+
+input:checked:nth-child(1) ~ .controls .controls__labels label:nth-child(1) span,
+input:checked:nth-child(2) ~ .controls .controls__labels label:nth-child(2) span,
+input:checked:nth-child(3) ~ .controls .controls__labels label:nth-child(3) span,
+input:checked:nth-child(4) ~ .controls .controls__labels label:nth-child(4) span,
+input:checked:nth-child(5) ~ .controls .controls__labels label:nth-child(5) span {
+	background-color: transparent;
+}
+
+/* Стили, когда кнопка выбрана и на кнопку наведена мышь*/
+
+input:checked:nth-child(1) ~ .controls .controls__labels label:nth-child(1):hover span,
+input:checked:nth-child(2) ~ .controls .controls__labels label:nth-child(2):hover span,
+input:checked:nth-child(3) ~ .controls .controls__labels label:nth-child(3):hover span,
+input:checked:nth-child(4) ~ .controls .controls__labels label:nth-child(4):hover span,
+input:checked:nth-child(5) ~ .controls .controls__labels label:nth-child(5):hover span {
+	border: 0.125rem solid white;
+}
+
+/* Стиль кружка, когда он не выбран при наведенииы */
+
+label:hover span {
+	background-color: white;
+	border: none;
+}
+
+/* Добавление стилей при нажатии */
+
+input:checked:nth-child(1) ~ .controls .controls__labels label:nth-child(1):active span,
+input:checked:nth-child(2) ~ .controls .controls__labels label:nth-child(2):active span,
+input:checked:nth-child(3) ~ .controls .controls__labels label:nth-child(3):active span,
+input:checked:nth-child(4) ~ .controls .controls__labels label:nth-child(4):active span,
+input:checked:nth-child(5) ~ .controls .controls__labels label:nth-child(5):active span {
+	background-color: white;
+}
